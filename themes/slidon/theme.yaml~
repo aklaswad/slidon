@@ -1,0 +1,74 @@
+--- 
+author_link: http://www.sixapart.jp/
+author_name: Six Apart, Ltd.
+class: blog
+description: A slideware theme that brings you a slide composing screen and cool presentation appearance. This theme is for demonstration of MT5 theme framework.
+id: slidon
+label: Slidon
+name: Slidon
+version: 0.1
+thumbnail_file: slidon_icon.png
+thumbnail_file_medium: slidon_icon_medium.png
+thumbnail_file_small: slidon_icon_small.png
+required_components:
+  cmscontext/cmscontext.pl: 0.1
+elements: 
+  blog_static_files: 
+    component: ~
+    data: 
+      - js
+    importer: blog_static_files
+  custom_fields: 
+    component: commercial
+    data: 
+      list_by_step: 
+        default: 0
+        description: Show List by Step
+        name: List By Step
+        obj_type: entry
+        options: ~
+        required: 0
+        tag: EntryListByStep
+        type: checkbox
+      transition: 
+        default: Normal
+        description: ''
+        name: Transition
+        obj_type: entry
+        options: Normal,Fade,Drop
+        required: 0
+        tag: EntryTransition
+        type: select
+    importer: custom_fields
+  template_set: 
+    component: ~
+    data: 
+      base_path: templates
+      label: exported_template set
+      templates: 
+        index: 
+          main_index: 
+            label: Main Index
+            outfile: index.html
+            rebuild_me: 1
+          styles: 
+            label: Stylesheet
+            outfile: styles.css
+            rebuild_me: 1
+        module: 
+          slide_body: 
+            label: Slide Body
+        system: 
+          comment_listing: 
+            label: Comment Listing
+          comment_preview: 
+            label: Comment Preview
+          comment_response: 
+            label: Comment Response
+          dynamic_error: 
+            label: Dynamic Error
+          popup_image: 
+            label: Popup Image
+          search_results: 
+            label: Search Results
+    importer: template_set

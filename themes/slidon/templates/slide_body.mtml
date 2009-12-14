@@ -1,0 +1,34 @@
+<mt:entryIfTagged tag="@title">
+    <h1 class="slide-title"><mt:EntryTitle></h1>
+    <p><mt:entryBody></p>
+<mt:else>
+    <h2 class="slide-title"><mt:EntryTitle></h2>
+    <mt:EntryBody trim="1" setvar="body">
+    <mt:if name="body">
+<div class="slide-body">
+        <mt:setvarblock like_table>/<table/i</mt:setvarblock>
+        <mt:setvarblock like_pre>/<pre/i</mt:setvarblock>
+        <mt:if name="body" like="$like_table">
+            <mt:var name = "body">
+        <mt:else like="$like_pre">
+            <mt:var name = "body">
+        <mt:else>
+        <ul class="slide-list<mt:if tag="EntryListByStep"> incremental</mt:if>">
+            <mt:var
+                name = "body"
+                regex_replace = "/^(.+)/gm":"<li>$1"
+                regex_replace = "/(.+)$/gm":"$1</li>"
+            >
+        </ul>
+        </mt:if>
+</div>
+    <mt:else>
+<p class="slide-image">
+    <mt:if slide_asset_width>
+        <mt:EntryAssets lastn="1"><img src="<mt:AssetThumbnailURL width="$slide_asset_width">" /></mt:EntryAssets>
+    <mt:else>
+        <mt:EntryAssets lastn="1"><img src="<mt:AssetURL>" /></mt:EntryAssets>
+    </mt:if>
+</p>
+    </mt:if>
+</mt:entryIfTagged>

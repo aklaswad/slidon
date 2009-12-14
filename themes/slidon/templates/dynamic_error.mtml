@@ -1,0 +1,13 @@
+
+<mt:SetVarBlock name="page_title">Page Not Found</mt:SetVarBlock>
+<mt:SetVarBlock name="title"><$mt:BlogName encode_html="1"$>: <$mt:Var name="page_title"$></mt:SetVarBlock>
+
+<$mt:Include module="Header" body_class="mt-dynamic-error"$>
+
+<h1 id="page-title"><$mt:Var name="page_title"$></h1>
+<blockquote>
+    <strong><$mt:ErrorMessage$></strong>
+</blockquote>
+
+<$mt:Include module="Footer"$>
+

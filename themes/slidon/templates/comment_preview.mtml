@@ -1,0 +1,23 @@
+
+<$mt:Var name="page_layout" value="layout-wm"$>
+<mt:SetVarBlock name="page_title">Previewing your Comment</mt:SetVarBlock>
+<mt:SetVarBlock name="title"><$mt:BlogName encode_html="1"$>: <$mt:Var name="page_title"$></mt:SetVarBlock>
+<mt:SetVarBlock name="html_head">
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var user = <$mt:UserSessionState$>;
+    var is_preview = true;
+    /* ]]> */
+    </script>
+</mt:SetVarBlock>
+<$mt:Include module="Header" body_class="mt-comment-preview"$>
+
+<h1 id="page-title"><$mt:Var name="page_title"$></h1>
+
+<$mt:Include module="Comment Detail"$>
+
+<$mt:Include module="Comment Form"$>
+
+<$mt:Include module="Footer"$>
+
+
