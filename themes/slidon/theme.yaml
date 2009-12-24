@@ -6,7 +6,7 @@ description: A slideware theme that brings you a slide composing screen and cool
 id: slidon
 label: Slidon
 name: Slidon
-version: 0.1
+version: 0.2
 thumbnail_file: slidon_icon.png
 thumbnail_file_medium: slidon_icon_medium.png
 thumbnail_file_small: slidon_icon_small.png

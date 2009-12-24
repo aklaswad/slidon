@@ -2,7 +2,7 @@
     <h1 class="slide-title"><mt:EntryTitle></h1>
     <p><mt:entryBody></p>
 <mt:else>
-    <h2 class="slide-title"><mt:EntryTitle></h2>
+    <mt:if tag="entryTitle"><h2 class="slide-title"><mt:EntryTitle></h2></mt:if>
     <mt:EntryBody trim="1" setvar="body">
     <mt:if name="body">
 <div class="slide-body">
