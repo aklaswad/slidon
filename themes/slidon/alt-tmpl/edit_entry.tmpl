@@ -297,18 +297,47 @@
 }
 
 .slide-title {
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
 }
 
 .slide-body li {
-    font-size: 12px;
+    font-size: 8px;
+    text-align: left;
+    line-height: 10px;
+}
+
+.slide-body pre {
+    font-size: 8px;
     text-align: center;
+    border: 1px solid #666;
 }
 
 #save-entry-order-button {
     margin: -12px 0 12px 135px;
     width: 100px;
+}
+
+.preview-content-wrapper {
+    width: 100%;
+    height: 100px;
+    border: 0;
+    padding: 0;
+    margin: 4px;
+}
+
+.preview-content {
+    width: 140px;
+    height: 80px;
+    border: 1px solid #000;
+    padding: 8px;;
+    overflow: hidden;
+    float: left;
+    <mt:Assets tags="@background" limit="1">background: url(<mt:AssetThumbnailURL width="140" height="80" />);<mt:else>background-color: #bcd;</mt:Assets>
+}
+
+.edit-other-slide {
+    float: right;
 }
 
 </style>
@@ -321,7 +350,6 @@
     id="entry-past-slides"
     label="<__trans phrase="Slides">">
 <mt:cmsContext>
-<mt:setVarBlock name="background_image"><mt:Assets tags="@background" limit="1">background: url(<mt:AssetThumbnailURL width="180" height="120" />);<mt:else>background-color: #bcd;</mt:Assets></mt:setVarBlock>
 <mt:entries lastn="0" sort_order="ascend">
 <mt:if __first__><ul id="preview-list"></mt:if>
 <li class="preview-item" entry_id="<mt:entryID>" entry_title="<mt:entryTitle>">
@@ -331,16 +359,19 @@
     postdata['title_<mt:entryID>'] = '<mt:entryTitle>';
     postdata['created_on_<mt:entryID>'] = '<mt:entryDate format="%Y-%m-%d %H:%M:%S">';
 </script>
-<div
-    class="preview-content"
-    style="width: 180px; height: 120px; border: 1px solid #000; padding: 10px; overflow: hidden;<mt:getVar name="background_image">"
->
+<div class="preview-content-wrapper">
     <button
-    class="edit-other-slide"
-    onclick="location.href='<mt:var script_url>?__mode=view&_type=entry&blog_id=<mt:var blog_id>&id=<mt:entryId>'; return false;"
->edit</button>
-<mt:setVar name="slide_asset_width" value="150">
-<mt:include module="Slide Body">
+        class="edit-other-slide"
+        onclick="location.href='<mt:var script_url>?__mode=view&_type=entry&blog_id=<mt:var blog_id>&id=<mt:entryId>'; return false;"
+>
+        edit
+    </button>
+
+    <div class="preview-content">
+    <mt:setVar name="slide_asset_width" value="150">
+    <mt:include module="Slide Body">
+    </div>
+
 </div>
 </li>
 <mt:if __last__></ul></mt:if>
