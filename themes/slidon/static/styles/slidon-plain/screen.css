@@ -1,0 +1,143 @@
+/*
+
+name: Slidon Plain
+designer: Akira Sawada
+designer_url: http://blog.aklaswad.com/
+layouts: layout-w-b
+
+*/
+
+
+/*
+    **** CSS for Slidon ****
+*/
+
+
+body, div {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.presentation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#slide-header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 80px;
+}
+
+#slide-body {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    padding: 1.0em 0;
+}
+
+#slide-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 80px;
+    padding: 0;
+    margin: 0;
+}
+
+.content {
+    position: absolute;
+    margin: 5px 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+h1, h2 {
+    text-align: center;
+    text-shadow: #abc 4px 4px 6px;
+}
+
+h1.slide-title {
+    font-size: 80px;
+    margin-top: 1.2em;
+}
+
+h2.slide-title {
+    font-size: 52px;
+    margin-bottom: 0.6em;
+}
+
+.slide-top p {
+    margin-left: 40%;
+    margin-top: 5px;
+    font-size: 30px;
+    color: #468;
+}
+
+.slide-body ul {
+    padding-left: 100px;
+    font-size: 36px;
+    text-shadow: #abc 3px 3px 3px;
+    margin-top: 0;
+}
+
+.slide-body table {
+    margin: 0 auto;
+    width: 90%;
+    border: 3px solid #579;
+    -webkit-box-shadow: #abc 8px 8px 8px;
+    -moz-box-shadow: #abc 8px 8px 8px;
+}
+
+.slide-body th {
+    background-color: #abc;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.4em;
+    border: 1px solid #fff;
+    padding: 0.3em;
+}
+
+.slide-body td {
+    background-color: #def;
+    font-size: 28px;
+    border: 1px solid #fff;
+    padding: 0.3em;
+}
+
+.slide-body pre {
+    margin: 0 auto;
+    width: 90%;
+    border: 3px solid #579;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    padding: 1.0em;
+    background-color: #def;
+    font-size: 32px;
+    overflow: hidden;
+    -webkit-box-shadow: #abc 8px 8px 8px;
+    -moz-box-shadow: #abc 8px 8px 8px;
+}
+
+.slide-image {
+    margin: 40px;
+    text-align: center;
+}
+
+.slide-image img {
+    border: 1px solid #abc;
+    -webkit-box-shadow: #abc 8px 8px 8px;
+    -moz-box-shadow: #abc 8px 8px 8px;
+}
+

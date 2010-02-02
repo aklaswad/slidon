@@ -53,84 +53,9 @@
 
 </div>
     <script type="text/javascript">
-        var cur = 0;
         var slideCount = <mt:blogEntryCount>;
-        var listCount = 0;
-        var listIndex = 0;
-        function prev_next(dir) {
-            var oldSlide = $('#slide' + cur);
-            if ( listCount && ( listIndex > 0 ) && !dir ) {
-                listIndex--;
-                oldSlide.find('.incremental li:eq(' + listIndex + ')').hide();
-
-            }
-            else if ( listCount && ( listCount > listIndex ) && dir ){
-                if (oldSlide.attr('transition') == 'Drop') { 
-                    oldSlide.find('.incremental li:eq(' + listIndex + ')')
-                            .show("drop", {direction: "right", mode: "show"}, 1000 );
-                }
-                else if ( oldSlide.attr('transition') == 'Fade' ) { 
-                    oldSlide.find('.incremental li:eq(' + listIndex + ')')
-                            .fadeIn(1000);
-                }
-                else {
-                    oldSlide.find('.incremental li:eq(' + listIndex + ')')
-                            .show();
-                }
-                listIndex++;
-            }
-            else {
-                if (!dir && cur > 1) {
-                    cur--;
-                    var newSlide = $('#slide' + cur);
-                    var list = newSlide.find('div ul.incremental li');
-                    if ( list ) {
-                        listCount = list.length;
-                        listIndex = listCount; 
-                        list.each(function(){ $(this).show() });
-                    }
-                    oldSlide.hide();
-                    newSlide.show();
-
-                }
-                else if ( dir && cur < slideCount ) {
-                    cur++;
-                    var newSlide = $('#slide' + cur);
-
-                    listCount = 0;
-                    var list = newSlide.find('div ul.incremental li');
-                    if ( list ) {
-                        listCount = list.length;
-                        listIndex = 0;
-                        list.each(function(){ $(this).hide() });
-                    }
-                    if (newSlide.attr('transition') == 'Fade') {
-                        oldSlide.fadeOut(1500);
-                        newSlide.fadeIn(1500);
-                    }
-                    if (newSlide.attr('transition') == 'Drop') {
-                        oldSlide.hide("drop", {direction: "left" }, 1000);
-                        newSlide.show("drop", {direction: "right", mode: "show"}, 1000 );
-                    }
-                    else {
-                        oldSlide.hide();
-                        newSlide.show();
-                    }
-                }
-            }
-        }
-        function prev_slide() { prev_next(0) }
-        function next_slide() { prev_next(1) }
-        $(window).keydown(function(e){
-            if ( e.keyCode == 37 || ( e.keyCode == 32 && e.shiftKey )) {
-                prev_slide();
-            }
-            else if ( e.keyCode == 39 || ( e.keyCode == 32 && !e.shiftKey )) {
-                next_slide();
-            }
-            return true;
-        });
     </script>
+    <script type="text/javascript" src="<mt:blogURL>slidon.js" ></script>
 </body>
 </html>
 
