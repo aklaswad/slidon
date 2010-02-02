@@ -1,5 +1,6 @@
 <mt:ignore><!-- FIXME: proper handling of show/hide this widget below --></mt:ignore>
 <$mt:setvar name="disp_prefs_show_revision" value="1"$>
+<!-- added for slidon --> <mt:setvar name="convert_breaks" value="0" />
 <mt:if name="object_type" eq="page">
     <mt:if name="can_manage_pages">
         <$mt:setvar name="can_publish_post" value="1"$>
@@ -1308,6 +1309,8 @@ function listPreviousPings () {
                         </div>
 
                         <!-- text filters -->
+<!-- Modified for slidon: BEGIN -->
+<!-- Hide original form 
                         <div id="field-convert_breaks">
                             <__trans phrase="Format:">
                             <select name="convert_breaks" id="convert_breaks" onchange="changedTextFormat(this)">
@@ -1327,7 +1330,10 @@ function listPreviousPings () {
                             </mt:if>
                             <a href="#" onclick="openTFDocs(); return false" id="formatting-help-link" class="help-link<mt:unless name="show_formatting_help"> disabled</mt:unless>">?</a>
                         </div>
+-->
+<input type="hidden" name="convert_breaks" id="convert_breaks" value="0" />
 
+<!-- Modified for slidon: END -->
                     </div>
                 </div>
                 <mt:include name="include/editor.tmpl">
