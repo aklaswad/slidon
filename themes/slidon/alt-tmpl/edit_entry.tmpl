@@ -312,7 +312,7 @@
 }
 
 </style>
-<script type="text/javascript" src="<mt:blogURL>js/jquery-ui-1.7.2.custom.min.js"></script> 
+<script type="text/javascript" src="<mt:SupportDirectoryURL>theme_static/slidon/js/jquery-ui-1.7.2.custom.min.js"></script> 
 <script type="text/javascript">
     var postdata = {};
 </script>
@@ -348,13 +348,13 @@
 </mt:cmsContext>
 </mtapp:widget>
 
-<button id="save-entry-order-button" style="display: none;">Save new order</button>
+<button id="save-entry-order-button" style="display: none;">Save this order</button>
 
 <script type="text/javascript">
 jQuery(function() {
     jQuery('#preview-list').sortable({
         update: function(event, ui){
-            jQuery('#save-entry-order-button').text('save new order');
+            jQuery('#save-entry-order-button').text('Save this order');
             jQuery('#save-entry-order-button').show();
         }
     })
@@ -381,7 +381,7 @@ jQuery('#save-entry-order-button').click(function(){
     postdata['magic_token'] = '<mt:var magic_token>';
     postdata['return_args'] = '';
     postdata['__mode'] = 'save_entries';
-    jQuery('#save-entry-order-button').text('saving...');
+    jQuery('#save-entry-order-button').text('Saving...');
 
     jQuery.post( '<mt:var script_url>', postdata, function(xhr) {
         jQuery('#save-entry-order-button').hide();

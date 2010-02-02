@@ -45,6 +45,13 @@ elements:
     data: 
       base_path: templates
       label: exported_template set
+      base_css: base_style/base.css
+      stylecatcher_libraries:
+        pico:
+          url: '{{support}}theme_static/slidon/styles/slidon.html'
+          label: Slidon Styles
+          description_label: A collection of styles compatible with Slidon themes.
+          order: 1
       templates: 
         index: 
           main_index: 
@@ -54,6 +61,10 @@ elements:
           styles: 
             label: Stylesheet
             outfile: styles.css
+            rebuild_me: 1
+          javascript: 
+            label: JavaScript
+            outfile: slidon.js
             rebuild_me: 1
         module: 
           slide_body: 
